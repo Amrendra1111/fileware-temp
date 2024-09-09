@@ -1,0 +1,25 @@
+# NOTICE: This is a demo file for you to get started.
+# Make sure to edit and rename the file. If not renamed, the file will not be saved!
+
+---
+- name: Example Ansible Playbook
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure latest version of Nginx is installed
+      apt:
+        name: nginx
+        state: latest
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+
+    - name: Copy custom index.html to Nginx web root
+      copy:
+        src: /path/to/local/index.html
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'

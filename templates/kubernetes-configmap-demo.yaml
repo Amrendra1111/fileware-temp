@@ -1,0 +1,11 @@
+#NOTICE: This is a demo file for you to get started.
+#Make sure to edit and rename the file. If not renamed, the file will not be saved!
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example-configmap
+data:
+  config.properties: |
+    key1=value1
+    key2=value2
